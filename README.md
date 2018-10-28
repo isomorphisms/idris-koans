@@ -2,11 +2,11 @@ idris-koans
 ===========
 
 Koans are small lessons on the path to enlightenment.
-Previously, the _Koans_ method of learning a language has be used by both: [Clojure](http://clojurekoans.com/), [Clojurescript](http://clojurescriptkoans.com/), and [Ruby](http://rubykoans.com/).
+<!-- Previously, the _Koans_ method of learning a language has be used by both: [Clojure](http://clojurekoans.com/), [Clojurescript](http://clojurescriptkoans.com/), and [Ruby](http://rubykoans.com/).
 With Ruby Koans being the initial Koans project.
-The aim of the Idris Koans project is to provide an easy learning environment in which you can learn Idris, and Functional Programming (FP).
-Insight will be derived by encountering 'failing' code that requires fixing.
-By fixing the code you will learn more about Idris and FP.
+The aim of the Idris Koans project is to provide an easy learning environment in which you can learn Idris, and Functional Programming (FP). -->
+Fix the broken code you find in each file.
+<!-- By fixing the code you will learn more about Idris and functional programming. -->
 
 Within the `Koans` folder you will find the various lessons.
 Each lesson addresses various topics within FP, and also specific to Idris.
