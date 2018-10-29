@@ -21,6 +21,8 @@ subtract = 1977 - ?inception == 3
 -- there?
 division : Bool
 division = 26 / ?pigshed == 2
+-- this won’t work because integer division is not defined
+
 
 -- | There were 32 B/W episodes of ten minutes each, and 40 colour
 -- episodes of five minutes each. How many minutes of Ivor the Engine
