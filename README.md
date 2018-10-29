@@ -19,14 +19,12 @@ The files should be attempted in the following order:
 1. 05-Lists.idr
 1. 06-ListComprehensions.idr
 
-Edit the Koan file in your favourite editor, and compile each Koan in the terminal using the Idris compiler.
-
-Either a CLI/REPL environment _a la_ [Clojure Koans](http://clojurekoans.com/), or Web Based _a la_ [Clojurescript Koans](http://clojurescriptkoans.com/) may be added.
+Fix the files, then run e.g. `idris --check 01-Arithmetic.idr`.
 
 
 
 
-For editing Idris there is support for both the [Emacs](https://github.com/idris-hackers/idris-mode) and [Vim](https://github.com/idris-hackers/idris-vim) editors.
+
 
 
 
