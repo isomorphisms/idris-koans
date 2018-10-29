@@ -3,29 +3,29 @@ module Koans.Arithmetic
 
 -- | There were 32 B/W Episodes of Ivor the Engine, and 72 episodes
 -- were produced altogether. How many colour episodes were produced?
-colour : Bool
-colour = ?fillme1 + 32 == 72
+add : Bool
+add = ?colour + 32 == 72
 
 -- | B/W Episodes of Ivor the Engine were ten minutes long. If you
 -- were to watch all the episodes in one sitting how many minutes
 -- would it take?
-bw_duration : Bool
-bw_duration = ?fillme2 == 10 * 32
+multiply : Bool
+multiply = ?b_w_duration == 10 * 32
 
 -- | In what year did the Colourised version of Ivor the Engine first air?
-inception : Bool     
-inception = 1977 - ?fillme3 == 3
+subtract : Bool     
+subtract = 1977 - ?inception == 3
 
 -- | 26 B/W episodes of Ivor the Engine were discovered in a Pig shed
 -- in 2010. There were two seasons. How many episodes per season were
 -- there?
-pig : Bool
-pig = 26 / ?fillme4 == 2
+division : Bool
+division = 26 / ?pigshed == 2
 
 -- | There were 32 B/W episodes of ten minutes each, and 40 colour
 -- episodes of five minutes each. How many minutes of Ivor the Engine
 -- exist?
 parentheses : Int
-parentheses = ?fillme5
+parentheses = ?answer
 
 -- --------------------------------------------------------------------- [ EOF ]
