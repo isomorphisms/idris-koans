@@ -5,7 +5,7 @@ listCompZero : Bool
 listCompZero = ?fillme1 == with Classes [ x + x | x <- [1..5] ]
 
 -- | Write a list comprehension that returns all the numbers divisible by four, doubled.
-myFirstListComp : List Integer -> List Integer
+myFirstListComp : List Integer → List Integer
 myFirstListComp xs = ?fillme2
 
 computeList : Bool
@@ -17,10 +17,10 @@ divisibleByNine = ?fillme3
 
 -- | Using list comprehensions construct a function that turns a list of numbers into a list of strings.
 -- Odd numbers should be bang, Even numbers boom.
-boomBangs : List Integer -> List String
+boomBangs : List Integer → List String
 boomBangs xs = ?fillme4
                where
-                 transform : Integer -> String
+                 transform : Integer → String
                  transform = ?fillme5
 
 doBoomBangs : Bool
