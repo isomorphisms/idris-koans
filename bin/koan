@@ -1,0 +1,32 @@
+#!/bin/sh
+set -eu
+
+compiler=${IDRIS2:-idris2}
+codegen=${IDRIS2_CODEGEN:-chez}
+lesson=${1:-Arithmetic}
+
+case "$lesson" in
+Arithmetic|Equality|Boolean|Ranges|Lists|ListComprehensions|Tuples|HigherOrderFunctions|Misc)
+	;;
+*)
+	printf 'unknown lesson: %s\n' "$lesson" >&2
+	exit 2
+	;;
+esac
+
+source_file="Koans/$lesson.idr"
+
+"$compiler" --check "$source_file"
+
+if grep -Eq '\?[[:alpha:]_][[:alnum:]_]*' "$source_file"; then
+	printf '\nNamed holes remain in %s.\n' "$source_file" >&2
+	exit 1
+fi
+
+result=$("$compiler" --quiet --cg "$codegen" --exec main "$source_file")
+printf '%s\n' "$result"
+
+if [ "$result" != 'True' ]; then
+	printf '%s type-checks, but at least one answer is false.\n' "$source_file" >&2
+	exit 1
+fi

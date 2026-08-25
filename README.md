@@ -1,34 +1,62 @@
-idris-koans
-===========
+# Idris 2 Koans
 
-Koans are small lessons on the path to enlightenment.
-Fix the broken code you find in each file.
-<!-- By fixing the code you will learn more about Idris and functional programming. -->
+Koans are small lessons learned by repairing deliberately incomplete code.
+This edition targets **Idris 2 v0.8.0 or later**.
 
-Within the `Koans` folder you will find the various lessons.
-<!-- Each lesson addresses various topics within FP, and also specific to Idris.  -->
-Each lesson consists of a series of functions that when passed through the Idris compiler will either: fail to type check, or have the wrong behaviour.
-<!-- To pass each lesson each function needs to be completed or fixed so that it type checks, or has deterministic behaviour. -->
+The unfinished lessons are in `Koans`. Replace each named hole, such as
+`?fillme1`, with an expression that makes the lesson evaluate to `True`.
+Complete, compiler-checked answers are kept separately in `Solutions`.
 
-The files should be attempted in the following order:
+## Install Idris 2
 
-1. 01-Arithmetic.idr
-1. 02-Equality.idr
-1. 03-Boolean.idr
-1. 04-Ranges.idr
-1. 05-Lists.idr
-1. 06-ListComprehensions.idr
+Follow the upstream [Idris 2 installation instructions][install], then verify:
 
-Fix the files, then run e.g. `idris --check 01-Arithmetic.idr`.
+```sh
+idris2 --version
+```
 
+## Work through the lessons
 
+Attempt them in this order:
 
+1. `Arithmetic`
+2. `Equality`
+3. `Boolean`
+4. `Ranges`
+5. `Lists`
+6. `ListComprehensions`
+7. `Tuples`
+8. `HigherOrderFunctions`
 
+Run one lesson from the repository root:
 
+```sh
+./bin/koan Arithmetic
+```
 
+The command shows Idris 2's hole information while work remains. Once no
+named holes remain, it executes the lesson and succeeds only if every check is
+`True`.
 
+Run the maintained reference suite with:
 
+```sh
+make check
+```
 
-Idris Koans is in early development<!-- and so the list of Koans and method of interaction is primitive-->.
-If you would like to contribute please feel free to do so.
-However, please read [CONTRIBUTING.md] first.  
+## What changed from the Idris 1 edition
+
+- The compiler command is `idris2`.
+- Source filenames now agree with their module names.
+- Definitions moved out of the old Prelude are imported explicitly.
+- Integer division uses `div`; the old `/` exercise had no integer solution.
+- Two behaviorally impossible exercises were repaired.
+- Every lesson now has an executable truth check.
+- Reference solutions and continuous integration prevent the teaching files
+  from silently becoming obsolete again.
+
+The old lessons remain recognizable, but this is a compatibility port rather
+than a frozen historical copy. New dependent-type and Idriç-specific lessons
+can be added after this baseline.
+
+[install]: https://github.com/idris-lang/Idris2/blob/main/INSTALL.md
