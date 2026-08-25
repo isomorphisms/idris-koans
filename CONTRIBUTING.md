@@ -1,19 +1,18 @@
-# Contributing to 'Idris Koans'
+# Contributing to Idris 2 Koans
 
-## Rules
+Keep commits self-contained and keep the first line of each commit message
+under 73 characters.
 
-* Please aim to make commits self contained. Ideally one thing at a time.
-* Commit messages should have a brief (less than 73 characters) leading sentence. Together with a more detailed description where appropriate.
+For a lesson change:
 
-## Dev Process
+1. Update the unfinished file in `Koans`.
+2. Update its complete counterpart in `Solutions`.
+3. Ensure the lesson's `allPass` value checks behavior rather than merely
+   type-checking.
+4. Run `make check` with the oldest supported Idris 2 release.
 
-For developing the project, we aim to follow the following [Git Branching Model](http://nvie.com/posts/a-successful-git-branching-model).
-In this model there are two main branches:
+New lessons should have one main idea, useful named holes, an executable truth
+check, and a reference solution. Avoid exercises whose requested result cannot
+be produced by the operation being taught.
 
-* **master** Reflects the _current_ version of the tutorial inline with the _current_ version of Idris on Hackage.
-* **dev** Reflects the latest upstream and current state of the tutorial.
-
-All pull requests that are for new additions to the project should go to **dev**
-All pull requests that detail fixes to the tutorial that is: grammar, spelling, and coding mistakes should be submitted to **master**
-
-This might sound complicated but in the long term it makes sense in terms of release management.
+Submit changes from a focused branch through a pull request.

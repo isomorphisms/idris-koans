@@ -1,6 +1,7 @@
+||| Exercises on pairs, vectors, and zipping.
 module Koans.Tuples
 
--- Complete the following functions
+import Data.Vect
 
 firstPair : Bool
 firstPair = ?fillme1 == fst ("First", "Pair")
@@ -21,4 +22,11 @@ myFirstZip : Bool
 myFirstZip = zip ws is == ?fillme5
 
 whatIsMyResult : Bool
-whatIsMyResult = ?fillme6 == Vect.zipWith (+) is is
+whatIsMyResult = ?fillme6 == zipWith (+) is is
+
+export
+allPass : Bool
+allPass = firstPair && secondPair && myFirstZip && whatIsMyResult
+
+main : IO ()
+main = printLn allPass

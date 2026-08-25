@@ -1,0 +1,30 @@
+name: Idris 2
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  koans:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build prerequisites
+        run: sudo apt-get update && sudo apt-get install --yes chezscheme libgmp-dev
+
+      - name: Build Idris 2 v0.8.0
+        run: |
+          git clone --branch v0.8.0 --depth 1 https://github.com/idris-lang/Idris2.git "$RUNNER_TEMP/Idris2"
+          scheme_path=$(command -v scheme || command -v chezscheme)
+          make -C "$RUNNER_TEMP/Idris2" bootstrap SCHEME="$scheme_path"
+          make -C "$RUNNER_TEMP/Idris2" install PREFIX="$RUNNER_TEMP/idris2"
+          printf '%s\n' "$RUNNER_TEMP/idris2/bin" >> "$GITHUB_PATH"
+
+      - name: Check starters and reference solutions
+        run: make check
