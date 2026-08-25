@@ -23,8 +23,8 @@ jobs:
           git clone --branch v0.8.0 --depth 1 https://github.com/idris-lang/Idris2.git "$RUNNER_TEMP/Idris2"
           scheme_path=$(command -v scheme || command -v chezscheme)
           make -C "$RUNNER_TEMP/Idris2" bootstrap SCHEME="$scheme_path"
-          make -C "$RUNNER_TEMP/Idris2" install PREFIX="$RUNNER_TEMP/idris2"
-          printf '%s\n' "$RUNNER_TEMP/idris2/bin" >> "$GITHUB_PATH"
+          make -C "$RUNNER_TEMP/Idris2" install
+          printf '%s\n' "$HOME/.idris2/bin" >> "$GITHUB_PATH"
 
       - name: Check starters and reference solutions
         run: make check
